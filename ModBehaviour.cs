@@ -15,6 +15,7 @@ namespace DuckovWeaponExample
     {
 
         string dllPath = Assembly.GetExecutingAssembly().Location;
+        string modid = "DuckovWeaponExample";
         void Awake()
         {
             Debug.Log($"DuckovWeaponExample awaked. Presented by Zaia");
@@ -29,17 +30,56 @@ namespace DuckovWeaponExample
         protected override void OnAfterSetup()
         {
             //AssetUtil.Start();
-            var Bundle = AssetUtil.LoadBundle(dllPath, "examplebundle");
-            if (Bundle != null) { 
-                ItemUtils.RegisterGun(Bundle, "LMRItem");
-            }
+            RegisterItems();
+            RegisterQuests();
 
             I18n.loadFileJson(dllPath, $"/{I18n.localizedNames[SodaCraft.Localizations.LocalizationManager.CurrentLanguage]}");
-            CraftingUtils.AddCraftingFormula("crafting_example", 0L, new (int, long)[1]
+            AddFormulas();
+            AddShopItems();
+        }
+
+        private static void AddShopItems()
+        {
+            ShopGoodsData data = new ShopGoodsData
+            {
+                merchantProfileID = "Merchant_Weapon",
+                typeID = 31001,
+                maxStock = 1,
+                forceUnlock = false,
+                priceFactor = 1F,
+                possibility = 1F
+            };
+
+            ShopUtils.AddGoods(data);
+        }
+
+        private static void RegisterQuests()
+        {
+            QuestUtils.RegisterQuest(Quests.EXAMPLE_QUEST_1);
+            QuestUtils.RegisterQuest(Quests.EXAMPLE_QUEST_2);
+            QuestUtils.AddQuestRelation(31001, before: 23, after: 31002);
+            QuestUtils.AddQuestRelation(31002, before: 31001);
+        }
+
+        private void RegisterItems()
+        {
+            var Bundle = AssetUtil.LoadBundle(dllPath, "examplebundle");
+            if (Bundle != null)
+            {
+                ItemUtils.RegisterGun(Bundle, "LMRItem", 654, modid);
+            }
+            ItemUtils.CreateCustomBluePrint(Quests.BLUEPRINT_EXAMPLE);
+        }
+
+        private void AddFormulas()
+        {
+            CraftingUtils.AddCraftingFormula("lmr_crafting_example", 0L, new (int, long)[]
             {
                 (367, 5L)
-            }, 31001, 1, new string[1] { "WorkBenchAdvanced" });
-            CraftingUtils.AddDecomposeFormula(31001, 0L, new (int, long)[1]
+            }, 31001, 1, new string[1] { "WorkBenchAdvanced" }, "", false, false, false, modid
+
+            );
+            CraftingUtils.AddDecomposeFormula(31001, 0L, new (int, long)[]
             {
                 (367, 1L)
             });

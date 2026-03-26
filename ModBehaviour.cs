@@ -5,6 +5,7 @@ using ItemStatsSystem;
 using System;
 using System.Reflection;
 using TMPro;
+using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,6 +52,54 @@ namespace DuckovWeaponExample
             };
 
             ShopUtils.AddGoods(data);
+
+            ShopGoodsData data1 = new ShopGoodsData
+            {
+                merchantProfileID = "Merchant_Weapon",
+                typeID = 31010,
+                maxStock = 1,
+                forceUnlock = true,
+                priceFactor = 1F,
+                possibility = 1F
+            };
+
+            ShopUtils.AddGoods(data1);
+
+            ShopGoodsData data2 = new ShopGoodsData
+            {
+                merchantProfileID = "Merchant_Weapon",
+                typeID = 31011,
+                maxStock = 1,
+                forceUnlock = true,
+                priceFactor = 1F,
+                possibility = 1F
+            };
+
+            ShopUtils.AddGoods(data2);
+
+            ShopGoodsData data3 = new ShopGoodsData
+            {
+                merchantProfileID = "Merchant_Weapon",
+                typeID = 31012,
+                maxStock = 1,
+                forceUnlock = true,
+                priceFactor = 1F,
+                possibility = 1F
+            };
+
+            ShopUtils.AddGoods(data3);
+
+            ShopGoodsData data4 = new ShopGoodsData
+            {
+                merchantProfileID = "Merchant_Weapon",
+                typeID = 31013,
+                maxStock = 1,
+                forceUnlock = true,
+                priceFactor = 1F,
+                possibility = 1F
+            };
+
+            ShopUtils.AddGoods(data4);
         }
 
         private static void RegisterQuests()
@@ -67,6 +116,25 @@ namespace DuckovWeaponExample
             if (Bundle != null)
             {
                 ItemUtils.RegisterGun(Bundle, "LMRItem", 654, modid);
+
+                Item stock = ItemUtils.GetCustomItem(dllPath, Items.STOCK_TEST, modid);
+                ItemUtils.SetItemGraphic(stock, Bundle, "IG_STOCK_TEST");
+                ItemUtils.RegisterItem(stock, modid);
+
+                Item sight = ItemUtils.GetCustomItem(dllPath, Items.SIGHT_TEST, modid);
+                ItemUtils.SetItemGraphic(sight, Bundle, "IG_SIGHT_TEST");
+
+                ItemSetting_Accessory itemSetting_Accessory = sight.AddComponent<ItemSetting_Accessory>();
+                itemSetting_Accessory.overrideAdsAimMarker = ItemAssetsCollection.GetPrefab(571).GetComponent<ItemSetting_Accessory>().overrideAdsAimMarker;
+                ItemUtils.RegisterItem(sight, modid);
+
+                Item muzzle = ItemUtils.GetCustomItem(dllPath, Items.MUZZLE_TEST, modid);
+                ItemUtils.SetItemGraphic(muzzle, Bundle, "IG_MUZZLE_TEST");
+                ItemUtils.RegisterItem(muzzle, modid);
+
+                Item grip = ItemUtils.GetCustomItem(dllPath, Items.GRIP_TEST, modid);
+                ItemUtils.SetItemGraphic(grip, Bundle, "IG_GRIP_TEST");
+                ItemUtils.RegisterItem(grip, modid);
             }
             ItemUtils.CreateCustomBluePrint(Quests.BLUEPRINT_EXAMPLE);
         }

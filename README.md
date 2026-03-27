@@ -9,4 +9,4 @@
 若希望构建自己的AssetsBundle，请参考[资源仓库](https://github.com/0999312/Duckov-FML-Gun-Example-Assets)
 ***  
 ## 许可证  
-本项目所使用模型与材质保留所有权利（All Rights Reversed），其余部分为公有领域（Public Domain）。
+本项目所使用模型与材质使用CC BY-NC-ND 4.0协议，其余部分为公有领域（Public Domain）。

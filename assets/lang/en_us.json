@@ -1,4 +1,19 @@
 {
-    "lmr":"TRW Low Maintenance Rifle",
-    "lmr_Desc":"The simplest auto rifle"
+    "lmr":"Low Maintenance Rifle",
+    "lmr_Desc":"The simplest auto rifle",
+    "lmrBP":"Blueprint: LMR",
+    "lmrBP_Desc":"LMR's design blueprint",
+    "WPNExampleQuest1":"Extra Contents",
+    "WPNExampleQuest1_desc":"The owner of the beverage shop originally located in the south of the bunker also started to prepare some business. I asked him about it, and he said that he could not come to the bunker for the time being due to the store, but he could provide us with some of the goods he had. Of course, the premise is that we give enough money.",
+    "WPNExampleQuest2":"Simple Reverse Engineering",
+    "WPNExampleQuest2_desc":"Study that new gun you just got for me, and I'll see if I can create a new blueprint.",
+
+    "STOCK_TEST":"Prototype Tactical Stock",
+    "STOCK_TEST_Desc":"The first prototype of a tactical stock put into testing.",
+    "SIGHT_TEST":"Prototype Tactical Holo Sight",
+    "SIGHT_TEST_Desc":"The first prototype of a holo optic put into testing.",
+    "MUZZLE_TEST":"Prototype Tactical AR Silencer",
+    "MUZZLE_TEST_Desc":"The first prototype of a silencer put into testing.",
+    "GRIP_TEST":"Prototype Tactical Vertical Grip",
+    "GRIP_TEST_Desc":"The first prototype of a vertical grip put into testing."
 }

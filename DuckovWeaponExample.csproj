@@ -16,6 +16,9 @@
 		<SubPath>\Duckov_Data\Managed\</SubPath>
 		<SubPath Condition="'$(IsMac)'">/Duckov.app/Contents/Resources/Data/Managed/</SubPath>
 
+		<!-- Mod identity — inferred from the project namespace / assembly name -->
+		<ModID>DuckovWeaponExample</ModID>
+
 	</PropertyGroup>
 	<ItemGroup>
 		<Reference Include="$(DuckovPath)$(SubPath)TeamSoda.*">
@@ -31,6 +34,9 @@
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="$(DuckovPath)$(SubPath)SodaLocalization.dll">
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="$(DuckovPath)$(SubPath)FMODUnity.dll">
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="FastModdingLib">
@@ -57,5 +63,17 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="assets\" />
+	  <Folder Include="assets\sounds\" />
 	</ItemGroup>
+
+	<!-- Deploy the built DLL and assets directly into the game's Mods folder -->
+	<Target Name="DeployToMods" AfterTargets="Build">
+		<MakeDir Directories="$(DuckovPath)\Duckov_Data\Mods\$(ModID)" />
+		<ItemGroup>
+			<DeployAssets Include="$(ProjectDir)assets\**\*" />
+		</ItemGroup>
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DuckovPath)\Duckov_Data\Mods\$(ModID)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(DeployAssets)" DestinationFolder="$(DuckovPath)\Duckov_Data\Mods\$(ModID)\assets\%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Message Text="Deployed $(AssemblyName) -&gt; $(DuckovPath)\Duckov_Data\Mods\$(ModID)" Importance="high" />
+	</Target>
 </Project>

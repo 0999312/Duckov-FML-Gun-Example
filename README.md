@@ -6,8 +6,7 @@
 若您计划使用FML开发您的模组，可以参考本项目。  
 ## 使用方式
 请Clone本仓库后自行配置csproject文件。  
-UnityPackage文件用于在Unity编辑器中制作Prefab，是本项目附带的AssetBundle的示例。  
-请先导入GunExample再导入Umbra_Soft_Shadows。  
+若希望构建自己的AssetsBundle，请参考[资源仓库](https://github.com/0999312/Duckov-FML-Gun-Example-Assets)
 ***  
 ## 许可证  
-本项目所使用模型与材质保留所有权利（All Rights Reversed），其余部分为公有领域（Public Domain）。
+本项目所使用模型与材质使用CC BY-NC-ND 4.0协议，其余部分为公有领域（Public Domain）。

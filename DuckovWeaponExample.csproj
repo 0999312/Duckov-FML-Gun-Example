@@ -39,6 +39,9 @@
 		<Reference Include="$(DuckovPath)$(SubPath)FMODUnity.dll">
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="$(DuckovPath)$(SubPath)UniTask*">
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="FastModdingLib">
 		  <HintPath>FastModdingLib.dll</HintPath>
 			<Private>False</Private>

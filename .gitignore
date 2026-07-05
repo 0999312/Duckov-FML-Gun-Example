@@ -227,3 +227,9 @@ AppPackages/
 
 # Project documentation (kept locally, not tracked)
 Docs/
+
+# Token optimizer runtime data (session databases, analytics)
+token-optimizer/
+
+# OMO tooling run-continuation state
+.omo/

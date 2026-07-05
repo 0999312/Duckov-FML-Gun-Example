@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FastModdingLib.Audio;
+﻿using FastModdingLib.Audio;
 
 namespace DuckovWeaponExample
 {
@@ -27,14 +24,14 @@ namespace DuckovWeaponExample
             Path = "assets/sounds/mag_mk23_start.ogg",
             Eventname = "SFX/Combat/Gun/Reload/mag_mk23_start",
             MinDistance = 1.0F,
-            MaxDistance = 50.0F,
+            MaxDistance = 20.0F,
         };
         public static AudioData mk23_reload_end = new AudioData
         {
             Path = "assets/sounds/mag_mk23_end.ogg",
             Eventname = "SFX/Combat/Gun/Reload/mag_mk23_end",
             MinDistance = 1.0F,
-            MaxDistance = 50.0F,
+            MaxDistance = 20.0F,
         };
     }
 }

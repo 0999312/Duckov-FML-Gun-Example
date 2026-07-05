@@ -1,7 +1,5 @@
 ﻿using FastModdingLib;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DuckovWeaponExample
 {
@@ -125,7 +123,7 @@ namespace DuckovWeaponExample
             value = 5623,
             quality = 5,
             weight = 0.01F,
-            tags = { "Accessory", "Muzzle", "GunType_AR", "GunType_AR" },
+            tags = { "Accessory", "Muzzle", "GunType_AR" },
             modifiers = new List<ModifierData> {
                 new ModifierData {
                     key = "SoundRange",

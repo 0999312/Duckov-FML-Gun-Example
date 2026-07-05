@@ -3,6 +3,8 @@
     "lmr_Desc":"The simplest auto rifle",
     "lmrBP":"Blueprint: LMR",
     "lmrBP_Desc":"LMR's design blueprint",
+    "mk23":"MK23 SOCOM",
+    "mk23_Desc":"The Owner's favorite.",
     "WPNExampleQuest1":"Extra Contents",
     "WPNExampleQuest1_desc":"The owner of the beverage shop originally located in the south of the bunker also started to prepare some business. I asked him about it, and he said that he could not come to the bunker for the time being due to the store, but he could provide us with some of the goods he had. Of course, the premise is that we give enough money.",
     "WPNExampleQuest2":"Simple Reverse Engineering",
@@ -15,5 +17,11 @@
     "MUZZLE_TEST":"Prototype Tactical AR Silencer",
     "MUZZLE_TEST_Desc":"The first prototype of a silencer put into testing.",
     "GRIP_TEST":"Prototype Tactical Vertical Grip",
-    "GRIP_TEST_Desc":"The first prototype of a vertical grip put into testing."
+    "GRIP_TEST_Desc":"The first prototype of a vertical grip put into testing.",
+
+    "Endowmment_10":"Agent",
+    "Endowmment_10_Desc":"A professionally trained agent with enhanced mobility, close-quarters combat proficiency, firearms expertise, and superior weapon handling for faster reloads and recoil suppression.",
+
+    "AgentEndowmentUnlock":"Agent Training",
+    "AgentEndowmentUnlock_desc":"The owner needs some “helpers” to deal with some “trouble.” He’ll test you by having you use his favorite gun to handle some annoying “customers.” Once you’ve succeeded, he’ll give you some guidance."
 }
